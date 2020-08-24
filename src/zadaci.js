@@ -33,8 +33,32 @@ function randomDay(){
     const days= ['Monday', 'Tuesday', 'Wendsday', 'Thursday', 'Friday', 'Sutarday', 'Sunday']
     const random = Math.floor(Math.random() *days.length)
 
-    return console.log(days[random])
+    return days[random]
 }
 
-randomDay()
+console.log(randomDay())
+
+// 6. zadatak
+
+let elapsed = 0
+let timer = -1
+
+function tick(){
+    elapsed++
+    document.getElementById('stopwatch').innerHTML=elapsed 
+}
+
+function start() {
+    if(timer == -1){
+        timer = setInterval(tick, 1000);
+    }
+}
+
+function stop() {
+    if(timer != -1){
+        clearInterval(timer)
+        timer = -1
+    }
+}
+
 

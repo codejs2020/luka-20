@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <style>
-        table,td {
-            border:1px black solid
+        table,
+        td {
+            border: 1px black solid
         }
     </style>
 
@@ -11,11 +13,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
 
+    <div>
+        
+        Seconds: <span id="stopwatch">0</span>
     
+    </div>
+    <input type="button" id="startTimer" value="Start Timer" onclick="start();"><br />
+    <input type="button" id="stopTimer" value="Stop Timer" onclick="stop();"><br />
+
 
 
     <script src="zadaci.js"></script>
 </body>
+
 </html>
