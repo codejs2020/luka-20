@@ -23,15 +23,15 @@ function addZeroes(num, numOfZeroes) {
     return num;
 }
 
-console.log(addZeroes(75,8))
-console.log(addZeroes(5,3))
-console.log(addZeroes(759,6))
+console.log(addZeroes(75, 8))
+console.log(addZeroes(5, 3))
+console.log(addZeroes(759, 6))
 
 // 7. zadatak
 
-function randomDay(){
-    const days= ['Monday', 'Tuesday', 'Wendsday', 'Thursday', 'Friday', 'Sutarday', 'Sunday']
-    const random = Math.floor(Math.random() *days.length)
+function randomDay() {
+    const days = ['Monday', 'Tuesday', 'Wendsday', 'Thursday', 'Friday', 'Sutarday', 'Sunday']
+    const random = Math.floor(Math.random() * days.length)
 
     return days[random]
 }
@@ -43,22 +43,38 @@ console.log(randomDay())
 let elapsed = 0
 let timer = -1
 
-function tick(){
+function tick() {
     elapsed++
-    document.getElementById('stopwatch').innerHTML=elapsed 
+    document.getElementById('stopwatch').innerHTML = elapsed
 }
 
 function start() {
-    if(timer == -1){
+    if (timer == -1) {
         timer = setInterval(tick, 1000);
     }
 }
 
 function stop() {
-    if(timer != -1){
+    if (timer != -1) {
         clearInterval(timer)
         timer = -1
     }
 }
+
+// 8. zadatak 
+
+function randomColor() {
+    var red = Math.floor(Math.random() * 256);
+    var green = Math.floor(Math.random() * 256);
+    var blue = Math.floor(Math.random() * 256);
+    var bgColor = "rgb(" + red + "," + green + "," + blue + ")";
+
+    console.log(bgColor);
+
+    document.body.style.background = bgColor;
+}
+
+randomColor();
+
 
 
