@@ -26,3 +26,15 @@ function addZeroes(num, numOfZeroes) {
 console.log(addZeroes(75,8))
 console.log(addZeroes(5,3))
 console.log(addZeroes(759,6))
+
+// 7. zadatak
+
+function randomDay(){
+    const days= ['Monday', 'Tuesday', 'Wendsday', 'Thursday', 'Friday', 'Sutarday', 'Sunday']
+    const random = Math.floor(Math.random() *days.length)
+
+    return console.log(days[random])
+}
+
+randomDay()
+
