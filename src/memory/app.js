@@ -1,6 +1,6 @@
 let cards = []
 
-for (let i = 0; i < 6; i++) {
+for (let i = 0; i < 8; i++) {
     let card = `C:\Images\\${i}.png`
     cards.push(card)
     cards.push(card)
@@ -12,14 +12,15 @@ randomCards(cards)
 
 // style='display: none;' used in <img /> tag to hide img
 
+
 function drawBoard() {
-    let html = '<ol>'
-    for (let i = 0; i < 12; i++) {
+    let html = '<ul>'
+    for (let i = 0; i < 16; i++) {
         html += '<li>'
         html += `<img class='img' src = '${cards[i]}' />`
         html += '</li>'
     }
-    html += '</ol>'
+    html += '</ul>'
     return document.getElementById('container').innerHTML = html
 }
 
