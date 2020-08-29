@@ -3,8 +3,6 @@
     margin-left: 50px;
 }
 
-
-
 #container {
     width: 800px;
 }
@@ -22,9 +20,25 @@
     text-align: center;
     width: 125px;
     height: 125px;
+    overflow: hidden;
+    text-indent: -400px;
 }
 
-.img {
+#list-div>div.visible {
+    transition: transform 1s;
+    text-indent: inherit;
+    transform: rotateY(180deg);
+}
+
+#list-div>div.locked {
+    text-indent: inherit;
+    transition: transform 1s;
+    transform: rotateY(180deg);
+    background-color: red;
+}
+
+
+#img {
     padding-top: 25px;
     width: 80px;
     height: 80px;
