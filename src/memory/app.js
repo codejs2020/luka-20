@@ -16,7 +16,7 @@ function drawBoard() {
     let html = '<ol>'
     for (let i = 0; i < 12; i++) {
         html += '<li>'
-        html += `<img src = '${cards[i]}' />`
+        html += `<img class='img' src = '${cards[i]}' />`
         html += '</li>'
     }
     html += '</ol>'

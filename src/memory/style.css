@@ -13,13 +13,17 @@ h1 {
 }
 
 li {
-  border-style: solid; 
-  border-color: black;
-  display: flex;
-  justify-content: center;
-  float: left;
-  margin: 10px;
-  list-style: none;
-  width: 150px;
-  height: 150px;
+    border: 5px solid black;
+    float: left;
+    margin: 10px;
+    list-style: none;
+    text-align: center;
+    width: 150px;
+    height: 150px;
+}
+
+.img {
+    padding-top: 25px;
+    width: 100px;
+    height: 100px;
 }
