@@ -22,12 +22,16 @@
     height: 125px;
     overflow: hidden;
     text-indent: -400px;
+    background-image: url('http://127.0.0.1:8080/music.png');
+    background-color: lemonchiffon;
 }
 
 #list-div>div.visible {
     transition: transform 1s;
     text-indent: inherit;
     transform: rotateY(180deg);
+    background-image: unset;
+    background-color: teal;
 }
 
 #list-div>div.locked {

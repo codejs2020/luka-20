@@ -41,7 +41,6 @@ function randomCards(arr) {
         randomIndex = Math.floor(Math.random() * (currentIndex - 1))
         currentIndex -= 1
 
-
         temp = arr[currentIndex]
         arr[currentIndex] = arr[randomIndex]
         arr[randomIndex] = temp
