@@ -1,7 +1,7 @@
 let cards = []
-
-for (let i = 0; i < 8; i++) {
-    let card = `C:\Images\\${i}.png`
+let cardNum = 8
+for (let i = 0; i < cardNum; i++) {
+    let card = `http://127.0.0.1:8080//${i}.png`
     cards.push(card)
     cards.push(card)
 }
@@ -14,13 +14,14 @@ randomCards(cards)
 
 
 function drawBoard() {
-    let html = '<ul>'
-    for (let i = 0; i < 16; i++) {
-        html += '<li>'
+    let level = 16
+    let html = '<div id="list-div">'
+    for (let i = 0; i < level; i++) {
+        html += '<div>'
         html += `<img class='img' src = '${cards[i]}' />`
-        html += '</li>'
+        html += '</div>'
     }
-    html += '</ul>'
+    html += '</div>'
     return document.getElementById('container').innerHTML = html
 }
 

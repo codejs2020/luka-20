@@ -1,7 +1,9 @@
 #header {
-    display: flex;
-    justify-content: space-between;
     width: 680px;
+}
+
+.timer {
+    padding-left: 50px;
 }
 
 h1 {
@@ -12,18 +14,23 @@ h1 {
     width: 800px;
 }
 
-li {
+#list-div {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+#list-div>div{
     border: 5px solid black;
-    float: left;
     margin: 10px;
-    list-style: none;
+    padding: 20px;
     text-align: center;
-    width: 150px;
-    height: 150px;
+    width: 125px;
+    height: 125px;
 }
 
 .img {
     padding-top: 25px;
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
 }
