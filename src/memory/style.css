@@ -1,0 +1,25 @@
+#header {
+    display: flex;
+    justify-content: space-between;
+    width: 680px;
+}
+
+h1 {
+    margin-left: 50px;
+}
+
+#container {
+    width: 800px;
+}
+
+li {
+  border-style: solid; 
+  border-color: black;
+  display: flex;
+  justify-content: center;
+  float: left;
+  margin: 10px;
+  list-style: none;
+  width: 150px;
+  height: 150px;
+}
