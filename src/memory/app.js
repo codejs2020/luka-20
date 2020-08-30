@@ -1,21 +1,55 @@
 let cards = []
+let temp = ''
+
+let firstCard, secondCard
 
 function clickOnCard(event) {
     const el = event.target
-    el.classList.add('flip')
+    if (!el.classList.contains('matched')) {
+        el.classList.add('flip')
 
+        if(temp !== '') {
+            setTimeout(()=>{
+                if(el.innerHTML === temp) {
+                    document.querySelector('.flip').classList.add('matched')
+                    document.querySelector('.flip').classList.remove('flip')
+                    firstCard = this
+
+                    document.querySelector('.flip').classList.add('matched')
+                    document.querySelector('.flip').classList.remove('flip')
+                    secondCard = this
+                    
+
+                } else {
+                    document.querySelector('.flip').classList.remove('flip')
+                    document.querySelector('.flip').classList.remove('flip')
+                }
+                temp = ''
+                resetBoard()
+            },1500)
+        } else {
+            temp = el.innerHTML
+        }
+    }
+
+}
+
+function resetBoard(){
+    [firstCard, secondCard] = [null, null]
 }
 
 function checkMatch() {
-    
+
 }
 
 function disableCard() {
-
+    firstCard.removeEventListener('click', clickOnCard)
+    secondCard.removeEventListener('click', clickOnCard)
+    resetBoard()
 }
 
 function unflipCards() {
-    
+
 }
 
 document.getElementById('container').addEventListener('click', clickOnCard)

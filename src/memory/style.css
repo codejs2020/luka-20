@@ -36,6 +36,7 @@
 
 #list-div>div.matched {
     text-indent: inherit;
+    background-image: unset;
     transition: transform 1s;
     transform: rotateY(180deg);
     background-color: rgb(180, 25, 25);
