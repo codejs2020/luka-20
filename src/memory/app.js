@@ -2,11 +2,23 @@ let cards = []
 
 function clickOnCard(event) {
     const el = event.target
-    el.classList.add('visible')
+    el.classList.add('flip')
 
+}
+
+function checkMatch() {
     
 }
 
+function disableCard() {
+
+}
+
+function unflipCards() {
+    
+}
+
+document.getElementById('container').addEventListener('click', clickOnCard)
 
 function cardImport() {
     let cardNum = 8
@@ -23,8 +35,8 @@ function drawGrid() {
     let gridSize = 16
     let html = '<div id="list-div">'
     for (let i = 0; i < gridSize; i++) {
-        html += '<div>'
-        html += `<img id='img' src = '${cards[i]}' />`
+        html += `<div>`
+        html += `<img id='img'  src = '${cards[i]}' />`
         html += '</div>'
     }
     html += '</div>'
@@ -53,6 +65,5 @@ function startGame() {
     drawGrid()
 }
 
-document.getElementById('container').addEventListener('click',clickOnCard)
 
 startGame()

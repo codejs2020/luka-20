@@ -26,19 +26,19 @@
     background-color: lemonchiffon;
 }
 
-#list-div>div.visible {
-    transition: transform 1s;
+#list-div>div.flip {
+    transition: transform 1.3s;
     text-indent: inherit;
     transform: rotateY(180deg);
     background-image: unset;
     background-color: teal;
 }
 
-#list-div>div.locked {
+#list-div>div.matched {
     text-indent: inherit;
     transition: transform 1s;
     transform: rotateY(180deg);
-    background-color: red;
+    background-color: rgb(180, 25, 25);
 }
 
 
