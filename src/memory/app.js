@@ -15,7 +15,7 @@ function clickOnCard(event) {
 
         if (temp !== '') {
             lockBoard = true
-            console.log('c')
+            console.log('drugi')
             setTimeout(() => {
                 if (el.innerHTML === temp) {
                     isMatch()
@@ -24,11 +24,11 @@ function clickOnCard(event) {
                 }
                 temp = ''
                 lockBoard = false
-                console.log('a')
+                console.log('unflip')
             }, 1500)
         } else {
             temp = el.innerHTML
-            console.log('b')
+            console.log('prvi')
         }
     }
 }
