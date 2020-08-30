@@ -5,17 +5,18 @@ let firstCard, secondCard
 
 let score = 0 //to-do
 
-let lockBoard = false //to-do
+let disableClick = false
 
 function clickOnCard(event) {
-    if (lockBoard) return
+    if (disableClick) return
     const el = event.target
     if (!el.classList.contains('matched')) {
         el.classList.add('flip')
 
         if (temp !== '') {
-            lockBoard = true
+            disableClick = true
             console.log('drugi')
+            secondCard = this
             setTimeout(() => {
                 if (el.innerHTML === temp) {
                     isMatch()
@@ -23,11 +24,12 @@ function clickOnCard(event) {
                     isNotMatch()
                 }
                 temp = ''
-                lockBoard = false
-                console.log('unflip')
+                disableClick = false
+                console.log('unflip/match')
             }, 1500)
         } else {
             temp = el.innerHTML
+            firstCard = this
             console.log('prvi')
         }
     }
