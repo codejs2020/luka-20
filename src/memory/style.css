@@ -24,10 +24,15 @@
     text-indent: -400px;
     background-image: url('http://127.0.0.1:8080/music.png');
     background-color: lemonchiffon;
+    cursor: pointer;
+}
+#list-div>div:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 #list-div>div.flip {
-    transition: transform 1.3s;
+    transform-style: preserve-3d;
+    transition: .6s ease-in-out;
     text-indent: inherit;
     transform: rotateY(180deg);
     background-image: unset;
@@ -40,6 +45,7 @@
     transition: transform 1s;
     transform: rotateY(180deg);
     background-color: rgb(180, 25, 25);
+    box-shadow: none;
 }
 
 

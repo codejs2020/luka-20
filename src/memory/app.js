@@ -6,6 +6,7 @@ let firstCard, secondCard
 function clickOnCard(event) {
     const el = event.target
     if (!el.classList.contains('matched')) {
+
         el.classList.add('flip')
 
         if (temp !== '') {
