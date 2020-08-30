@@ -1,9 +1,39 @@
 #header {
-    width: 680px;
-    margin-left: 50px;
+    display: flex;
+    justify-content: space-around;
+    justify-items: center;
+    align-items: center;
+    background-color: black;
+    color: ivory;
+    height: 120px;
+    font-size: 20px;
+}
+
+.nav .button {
+    background: none;
+    border: none;
+    color: ivory;
+    cursor: pointer;
+    padding: 0.5rem;
+    font-size: 30px;
+    padding-top: 20px;
+}
+.nav .sepLine {
+    text-align: center;
+    font-size: 50px;
+}
+
+.nav .button:hover {
+    color: limegreen;
+}
+
+.nav .rightSide {
+    padding-left: 20px;
 }
 
 #container {
+    margin:auto;
+    padding-top: 20px;
     width: 800px;
 }
 

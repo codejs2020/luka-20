@@ -2,6 +2,7 @@ let cards = []
 let temp = ''
 
 let firstCard, secondCard
+let score = 0
 
 function clickOnCard(event) {
     const el = event.target
@@ -40,7 +41,7 @@ function isMatch() {
     secondCard = this
 }
 
-function isNotMatch(){
+function isNotMatch() {
     document.querySelector('.flip').classList.remove('flip')
     document.querySelector('.flip').classList.remove('flip')
 }
@@ -91,6 +92,20 @@ function randomCards(arr) {
         arr[randomIndex] = temp
     }
     return arr
+}
+
+let elem = document.documentElement
+
+function openFullscreen() {
+    if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+    } else if (elem.mozRequestFullScreen) { /* Firefox */
+        elem.mozRequestFullScreen();
+    } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+        elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) { /* IE/Edge */
+        elem.msRequestFullscreen();
+    }
 }
 
 function startGame() {
