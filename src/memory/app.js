@@ -45,7 +45,7 @@ document.getElementById('container').addEventListener('click', clickOnCard)
 function cardImport() {
     let cardNum = 8
     for (let i = 0; i < cardNum; i++) {
-        let card = `http://127.0.0.1:8080/${i}.png`
+        let card = `imgs/${i}.png`
         cards.push(card)
         cards.push(card)
     }
