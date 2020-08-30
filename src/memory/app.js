@@ -2,14 +2,16 @@ let cards = []
 let temp = ''
 
 let firstCard, secondCard
-let score = 0
+
+let score = 0 //to-do
+
+let lockBoard = false //to-do
 
 function clickOnCard(event) {
     const el = event.target
     if (!el.classList.contains('matched')) {
-
         el.classList.add('flip')
-        
+
         if (temp !== '') {
             setTimeout(() => {
                 if (el.innerHTML === temp) {
@@ -18,8 +20,6 @@ function clickOnCard(event) {
                     isNotMatch()
                 }
                 temp = ''
-                disableCard()
-                resetCardValue()
             }, 1500)
         } else {
             temp = el.innerHTML
@@ -27,29 +27,17 @@ function clickOnCard(event) {
     }
 }
 
-function resetCardValue() {
-    [firstCard, secondCard] = [null, null]
-}
-
 function isMatch() {
     document.querySelector('.flip').classList.add('matched')
     document.querySelector('.flip').classList.remove('flip')
-    firstCard = this
 
     document.querySelector('.flip').classList.add('matched')
     document.querySelector('.flip').classList.remove('flip')
-    secondCard = this
 }
 
 function isNotMatch() {
     document.querySelector('.flip').classList.remove('flip')
     document.querySelector('.flip').classList.remove('flip')
-}
-
-function disableCard() {
-    firstCard.removeEventListener('click', clickOnCard)
-    secondCard.removeEventListener('click', clickOnCard)
-    resetCardValue()
 }
 
 document.getElementById('container').addEventListener('click', clickOnCard)
