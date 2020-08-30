@@ -8,11 +8,14 @@ let score = 0 //to-do
 let lockBoard = false //to-do
 
 function clickOnCard(event) {
+    if (lockBoard) return
     const el = event.target
     if (!el.classList.contains('matched')) {
         el.classList.add('flip')
 
         if (temp !== '') {
+            lockBoard = true
+            console.log('c')
             setTimeout(() => {
                 if (el.innerHTML === temp) {
                     isMatch()
@@ -20,9 +23,12 @@ function clickOnCard(event) {
                     isNotMatch()
                 }
                 temp = ''
+                lockBoard = false
+                console.log('a')
             }, 1500)
         } else {
             temp = el.innerHTML
+            console.log('b')
         }
     }
 }
