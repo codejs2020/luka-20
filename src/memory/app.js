@@ -41,7 +41,12 @@ function isMatch() {
 
     document.querySelector('.flip').classList.add('matched')
     document.querySelector('.flip').classList.remove('flip')
+    score++
+    document.getElementById('score').innerHTML = `Score: ${score}`
+    console.log(score) 
 }
+
+
 
 function isNotMatch() {
     document.querySelector('.flip').classList.remove('flip')
@@ -53,7 +58,7 @@ document.getElementById('container').addEventListener('click', clickOnCard)
 function cardImport() {
     let cardNum = 8
     for (let i = 0; i < cardNum; i++) {
-        let card = `imgs/${i}.png`
+        let card = `./imgs/${i}.png`
         cards.push(card)
         cards.push(card)
     }
