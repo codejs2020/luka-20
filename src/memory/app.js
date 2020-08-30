@@ -9,7 +9,7 @@ function clickOnCard(event) {
     if (!el.classList.contains('matched')) {
 
         el.classList.add('flip')
-
+        
         if (temp !== '') {
             setTimeout(() => {
                 if (el.innerHTML === temp) {
