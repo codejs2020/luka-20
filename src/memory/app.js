@@ -8,25 +8,16 @@ function clickOnCard(event) {
     if (!el.classList.contains('matched')) {
         el.classList.add('flip')
 
-        if(temp !== '') {
-            setTimeout(()=>{
-                if(el.innerHTML === temp) {
-                    document.querySelector('.flip').classList.add('matched')
-                    document.querySelector('.flip').classList.remove('flip')
-                    firstCard = this
-
-                    document.querySelector('.flip').classList.add('matched')
-                    document.querySelector('.flip').classList.remove('flip')
-                    secondCard = this
-                    
-
+        if (temp !== '') {
+            setTimeout(() => {
+                if (el.innerHTML === temp) {
+                    isMatch()
                 } else {
-                    document.querySelector('.flip').classList.remove('flip')
-                    document.querySelector('.flip').classList.remove('flip')
+                    isNotMatch()
                 }
                 temp = ''
-                resetBoard()
-            },1500)
+                resetCardValue()
+            }, 1500)
         } else {
             temp = el.innerHTML
         }
@@ -34,22 +25,29 @@ function clickOnCard(event) {
 
 }
 
-function resetBoard(){
+function resetCardValue() {
     [firstCard, secondCard] = [null, null]
 }
 
-function checkMatch() {
+function isMatch() {
+    document.querySelector('.flip').classList.add('matched')
+    document.querySelector('.flip').classList.remove('flip')
+    firstCard = this
 
+    document.querySelector('.flip').classList.add('matched')
+    document.querySelector('.flip').classList.remove('flip')
+    secondCard = this
+}
+
+function isNotMatch(){
+    document.querySelector('.flip').classList.remove('flip')
+    document.querySelector('.flip').classList.remove('flip')
 }
 
 function disableCard() {
     firstCard.removeEventListener('click', clickOnCard)
     secondCard.removeEventListener('click', clickOnCard)
-    resetBoard()
-}
-
-function unflipCards() {
-
+    resetCardValue()
 }
 
 document.getElementById('container').addEventListener('click', clickOnCard)
