@@ -127,6 +127,8 @@ function reload (){
 function stopwatch () {
     let seconds = 00
     let tenOfSec = 00
+    let minutes = 00
+    let spanMin = document.getElementById('minutes')
     let spanSec = document.getElementById('seconds')
     let spanTenOfSec = document.getElementById('ten-of-sec')
     let startButton = document.getElementById('start-button')
@@ -151,6 +153,13 @@ function stopwatch () {
             spanTenOfSec.innerHTML= '0' + 0
         }
         if (seconds > 9) spanSec.innerHTML = seconds
+        if (seconds > 59) {
+            seconds = 0
+            minutes++
+            spanMin.innerHTML = '0' + minutes
+            
+        }
+        if (minutes > 9) spanMin.innerHTML = minutes
     }
 }
 
