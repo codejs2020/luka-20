@@ -30,6 +30,7 @@ function clickOnCard(event) {
         } else {
             temp = el.innerHTML
             firstCard = this
+            stopwatch()
             console.log('prvi')
         }
     }
@@ -42,8 +43,8 @@ function isMatch() {
     document.querySelector('.flip').classList.add('matched')
     document.querySelector('.flip').classList.remove('flip')
     score++
-    document.getElementById('score').innerHTML = `Score: ${score}`
-    console.log(score) 
+    //document.getElementById('score').innerHTML = `Score: ${score}`
+    console.log(`Score: ${score}`) 
 }
 
 
@@ -65,6 +66,8 @@ function cardImport() {
     randomCards(cards)
 }
 
+//cardImport()
+
 
 function drawGrid() {
     let gridSize = 16
@@ -77,6 +80,8 @@ function drawGrid() {
     html += '</div>'
     document.getElementById('container').innerHTML = html
 }
+
+//drawGrid()
 
 // Fisher-Yates shuffle algor
 
@@ -109,10 +114,46 @@ function openFullscreen() {
     }
 }
 
-function startGame() {
-    cardImport()
-    drawGrid()
+function reload (){
+    let a = confirm('Are you sure?\nIf you reset, all data will be lost.')
+    if (a) {
+        window.location.reload()
+    } else {
+        false
+    }
 }
 
 
-startGame()
+function stopwatch () {
+    let seconds = 00
+    let tenOfSec = 00
+    let spanSec = document.getElementById('seconds')
+    let spanTenOfSec = document.getElementById('ten-of-sec')
+    let startButton = document.getElementById('start-button')
+    let interval
+
+    startButton.onclick = function(){
+        cardImport()
+        drawGrid()
+        clearInterval(interval)
+        interval = setInterval(timer, 10)
+    }
+
+    function timer () {
+        tenOfSec++
+
+        if (tenOfSec < 9) spanTenOfSec.innerHTML = '0' + tenOfSec
+        if (tenOfSec > 9) spanTenOfSec.innerHTML = tenOfSec
+        if (tenOfSec > 99) {
+            seconds++
+            spanSec.innerHTML = '0' + seconds
+            tenOfSec = 0 
+            spanTenOfSec.innerHTML= '0' + 0
+        }
+        if (seconds > 9) spanSec.innerHTML = seconds
+    }
+}
+
+stopwatch()
+
+

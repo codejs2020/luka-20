@@ -1,6 +1,6 @@
 #header {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     justify-items: center;
     align-items: center;
     padding-left: 25px;
@@ -17,7 +17,7 @@
     color: ivory;
     cursor: pointer;
     padding: 0.5rem;
-    font-size: 30px;
+    font-size: 20px;
     padding-top: 20px;
 }
 .nav .sepLine {
@@ -39,13 +39,14 @@
     color: ivory;
     cursor: pointer;
     padding: 0.5rem;
-    font-size: 30px;
+    font-size: 20px;
     padding-top: 20px;
 }
 
 .changeLevel {
     position: relative;
     display: inline-block;
+    padding-top: 8px;
 }
 
 .levels {
@@ -81,6 +82,13 @@
     padding: 0.5rem;
     font-size: 25px;
     padding-top: 20px;
+}
+
+#timer {
+    color: ivory;
+    padding: 0.5rem;
+    font-size: 25px;
+    padding-top: 29px;
 }
 
 #container {
